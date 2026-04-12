@@ -1,4 +1,4 @@
-<x-app-layout title="Director: {{$director->name}}">
+<x-app-layout title="Director: {{$director['name']}}">
    <div class="relative max-w-md mx-auto md:max-w-2xl mt-6 min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-xl mt-16">
     <div class="px-6">
         <div class="flex flex-wrap justify-center">
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="text-center mt-2">
-            <h3 class="text-2xl text-slate-700 font-bold leading-normal mb-1">{{$director->name}} {{$director->surname}}</h3>
+            <h3 class="text-2xl text-slate-700 font-bold leading-normal mb-1">{{$director['name']}} {{$director['surname']}}</h3>
             <div class="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
                 <i class="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"></i>Paris, France
             </div>

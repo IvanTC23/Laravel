@@ -10,13 +10,16 @@
             </tr>
         </thead>
         <tbody>
-            
-            @foreach($tableData as $director)
+            @foreach($tableData as $elemento)
+
                 <tr class="bg-neutral-primary border-b border-default">
-                    <td class="px-6 py-4">{{$director->name}}</td>
-                    <td class="px-6 py-4">{{$director->surname}}</td>
-                    <td class="px-6 py-4">{{$director->birthdate}}</td>
+                    @foreach($elemento as $dato)
+                        
+                        <td class="px-6 py-4">{{$dato}}</td>
+                        
+                    @endforeach
                 </tr>
+                
             @endforeach
             
 

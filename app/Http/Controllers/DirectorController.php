@@ -14,9 +14,10 @@ class DirectorController extends Controller
     {
         //
         $directores = Director::all();
-        $header = collect(['Nombre', 'Apellido', 'Fecha nacimiento']);
+        $header = ['Nombre', 'Apellido', 'Fecha nacimiento'];
+        $data = $directores->makeHidden(['id'])->toArray();
     
-        return view('director.index', compact('directores','header'));
+        return view('director.index',compact('data','header'));
         //return view(''); //TODO: Crear vista con componente tipo tabla que muestre todos los directores, y un enlace a la página de cada uno de ellos.
     }
 
@@ -42,9 +43,9 @@ class DirectorController extends Controller
     public function show(Director $director)
     {
         //
-        $headerPeliculas = collect(['Title', 'Sinopsis', 'Duration']);
-        $films = $director->films;
-        return view('director.show', compact('director','headerPeliculas','films'));
+        $headerPeliculas = ['Title', 'Sinopsis', 'Duration'];
+        $films = $director->films->makeHidden(['release_date', 'gendre','created_at','updated_at','director_id'])->toArray();
+        return view('director.show',compact('director','headerPeliculas','films'));
 
 
     }
