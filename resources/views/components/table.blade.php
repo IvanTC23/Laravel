@@ -13,10 +13,14 @@
             @foreach($tableData as $elemento)
 
                 <tr class="bg-neutral-primary border-b border-default">
-                    @foreach($elemento as $dato)
-                        
-                        <td class="px-6 py-4">{{$dato}}</td>
-                        
+                    @foreach($elemento as $key => $valor)
+                       
+                        @if($key=="name")
+                            <td class="px-6 py-4"><a href="#">{{!!$valor!!}}</a></td>
+                        @else
+                            <td class="px-6 py-4">{{$valor}}</td>
+                        @endif
+
                     @endforeach
                 </tr>
                 

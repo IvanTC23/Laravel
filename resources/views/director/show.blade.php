@@ -26,7 +26,7 @@
                     <div class="tablaPeliculas">
                         <x-table :header="$headerPeliculas" :tableData="$films"></x-table>
                     </div>
-
+                    <a href="{{route('directors.index')}}">Volver</a>
                 </div>
             </div>
         </div>
